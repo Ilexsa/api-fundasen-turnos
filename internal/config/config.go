@@ -1,0 +1,47 @@
+package config
+
+import (
+	"strconv"
+)
+
+type AppConfig struct {
+	APIAddr      string
+	APIToken     string
+	AllowedOrigins string
+
+	DBHost    string
+	DBPort    string
+	DBUser    string
+	DBPass    string
+	DBName    string
+	DBEncrypt string
+	DBConnTimeoutSeconds int
+}
+
+func Load() AppConfig {
+	return AppConfig{
+		APIAddr:        Get("API_ADDR", ":8080"),
+		APIToken:       Get("API_TOKEN", ""),
+		AllowedOrigins: Get("ALLOWED_ORIGINS", "*"),
+
+		DBHost:    Get("DB_HOST", Get("SERVER", "localhost")),
+		DBPort:    Get("DB_PORT", Get("PORT", "1433")),
+		DBUser:    Get("DB_USER", Get("DBUSER", "sa")),
+		DBPass:    Get("DB_PASS", Get("DBPASS", "")),
+		DBName:    Get("DB_NAME", Get("DBNAME", "TURNOS")),
+		DBEncrypt: Get("DB_ENCRYPT", Get("SSL", "disable")),
+		DBConnTimeoutSeconds: getInt("DB_CONN_TIMEOUT_SECONDS", 10),
+	}
+}
+
+func getInt(key string, def int) int {
+	v := Get(key, "")
+	if v == "" {
+		return def
+	}
+	n, err := strconv.Atoi(v)
+	if err != nil {
+		return def
+	}
+	return n
+}
