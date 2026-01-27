@@ -6,7 +6,7 @@ import (
 	"api-turnos/internal/websockets"
 	"log"
 	"net/http"
-
+    "strings"
 	"github.com/gin-gonic/gin"
 )
 
@@ -52,8 +52,8 @@ func (h *PantallaHandlers) ConnectWS(c *gin.Context) {
 }
 
 func (h *PantallaHandlers) GetEstadoActual(c *gin.Context) {
-    // Pedimos los últimos 10 para llenar la pantalla
-    turnos, err := h.service.ObtenerUltimosTurnos(10)
+    ubicacionParam:=strings.TrimPrefix(c.Param("ubicacion"), "/") // "" o "PRIMER PISO"
+    turnos, err := h.service.ObtenerUltimosTurnos(10, ubicacionParam)
     if err != nil {
         c.JSON(http.StatusInternalServerError, gin.H{"error": "Error DB"})
         return

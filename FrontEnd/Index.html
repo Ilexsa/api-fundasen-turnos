@@ -5,8 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pantalla de Turnos</title>
   <link rel="stylesheet" href="./src/libs/bootstrap/bootstrap.min.css">
+  <link rel="icon" href="./src/media/images/LOGOS ARQUIDOCESIS Y FILIALES-09 (1).png" type="image/png">
 
   <style>
+
+    @font-face{
+  font-family: "Roboto";
+  src: url("./src/fonts/roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Roboto";
+  src: url("./src/fonts/roboto/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Roboto";
+  src: url("./src/fonts/roboto/Roboto-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
     :root{
       --bg:#f6f8fc; --card:#fff; --border:#e6eaf2;
       --text:#0f172a; --muted:#64748b;
@@ -23,7 +49,7 @@
     .app-shell{
       height: 100vh;
       display: grid;
-      grid-template-rows: 88px 1fr 52px;
+      grid-template-rows: 88px 1fr ;
       gap: 12px;
       padding: 14px;
     }
@@ -109,18 +135,18 @@
 }
 
 .call-chip{
-  background: rgba(245,158,11,.10);
-  border: 1px solid rgba(245,158,11,.30);
+  background: rgba(144,28,34,1);
+  border: 1px solid rgba(222, 245, 11, 0.89);
   padding: 10px 14px;
   border-radius: 999px;
   font-weight: 1000;
   font-size: clamp(18px, 2.0vw, 30px);
-  color: #5a3b00;
+  color: #ffffff;
   white-space: nowrap;
 }
 
 .call-chip2{
-  background: rgba(6,182,212,.10);
+  background: rgba(6, 181, 212, 0.863);
   border: 1px solid rgba(6,182,212,.25);
   padding: 10px 14px;
   border-radius: 999px;
@@ -162,12 +188,12 @@
     }
     .brand{ display:flex; align-items:center; gap: 14px; }
     .logo-box{
-      width: 100px; height: 56px; border-radius: 16px;
+      width: 130px; height: 75px; border-radius: 16px;
       background: #f1f5ff; border: 1px solid var(--border);
       display:flex; align-items:center; justify-content:center; overflow:hidden;
     }
     .logo-box img{ width:100%; height:100%; object-fit: cover; }
-    .brand h1{ font-size: 32px; margin: 0; }
+    .brand h1{ font-size: 32px; margin: 0;font-weight: 800; }
     .brand small{ color: var(--muted); display:block; margin-top:2px; }
     .clock{ text-align:right; min-width: 170px; }
     .clock .time{ font-size: 36px; font-weight: 900; }
@@ -236,27 +262,33 @@
     .current .label{ color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .5px; font-weight: 900; }
     .current .patient{ font-size: 45px; font-weight: 950; margin: 6px 0 4px; line-height: 1.1; }
     .row-pills{ display:flex; align-items:center; gap: 10px; flex-wrap: wrap; }
-    .pill{ background: rgba(22,163,74,.10); border: 1px solid rgba(22,163,74,.25); padding: 6px 10px; border-radius: 999px; font-weight: 950; color: #0b3b1c; }
-    .pill2{ background: rgba(6,182,212,.10); border: 1px solid rgba(6,182,212,.25); padding: 6px 10px; border-radius: 999px; font-weight: 950; color: #0b3a42; }
+    .pill{ background: rgba(144,28,34,1); border: 1px solid rgba(22,163,74,.25); padding: 6px 10px; border-radius: 999px; font-weight: 950; color: #ffffff; }
+    .pill2{ background: rgba(6,182,212,.50); border: 1px solid rgba(6,182,212,.50); padding: 6px 10px; border-radius: 999px; font-weight: 950; color: #0b3a42; }
 
-    .queue-head{ padding: 10px 16px; border-bottom: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .queue-head{  height: 35px;padding: 10px 16px; border-bottom: 1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
     .queue-head .left{ color: var(--muted); text-transform: uppercase; letter-spacing: .5px; font-size: 12px; font-weight: 900; }
     .queue-head .count{ color: var(--muted); font-weight: 900; font-size: 12px; }
 
     .queue{ padding: 10px 12px 12px; min-height: 0; overflow:hidden; }
     .queue-list{ height: 100%; overflow:auto; padding-right:4px; }
     .queue-item{
-      display:grid; grid-template-columns: 1fr auto; gap: 10px; align-items:center;
+      display:grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items:center;
       padding: 10px 10px; border-radius: 14px; border: 1px solid var(--border);
       background: #fbfcff; margin-bottom: 10px;
     }
     .queue-item .name{ font-size: 30px; font-weight: 950; margin: 0; }
-    .queue-item .meta{ margin:2px 0 0; color: var(--muted); font-size: 12px; font-weight:700; }
+    .queue-item .meta{ margin:2px 0 0; color: var(--muted); font-size: 14px; font-weight:700; }
     .room-tag{
-      background: rgba(245,158,11,.10); border: 1px solid rgba(245,158,11,.30);
+      background: rgba(144,28,34,1); border: 1px solid rgba(245,158,11,.30);
       padding: 7px 10px; border-radius: 999px; font-weight: 950; font-size: 22px;
-      color: #5a3b00; white-space: nowrap;
+      color: #ffffff; white-space: nowrap;
     }
+    .ubi-tag{
+      background: rgba(144,28,34,1); border: 1px solid rgba(245,158,11,.30);
+      padding: 7px 10px; border-radius: 999px; font-weight: 950; font-size: 22px;
+      color: #ffffff; white-space: nowrap;
+    }
+
 
     /* Footer */
     .footer{
@@ -303,6 +335,7 @@
     <div class="call-row">
       <div class="call-chip" id="callRoom">CONSULTORIO</div>
       <div class="call-chip2" id="callSpec">ESPECIALIDAD</div>
+      <div class="call-chip" id="callUbi">UBICACION</div>
     </div>
 
     <div class="call-sub" id="callHint">Por favor, acérquese al consultorio indicado.</div>
@@ -317,7 +350,14 @@
   <div class="audio-gate" id="audioGate">
     <div class="audio-card">
       <h2>Habilitar sonido</h2>
-      <p>Haga clic para activar la voz de los llamados.</p>
+<p>Seleccione la ubicación y haga clic para activar la voz de los llamados.</p>
+
+    <label class="form-label fw-bold">Ubicación</label>
+    <select class="form-select mb-3" id="selUbicacion">
+      <option value="">GENERAL (todas)</option>
+      <option value="PRIMER PISO">PRIMER PISO</option>
+      <option value="SOTANO">SOTANO</option>
+    </select>
       <button class="btn btn-primary w-100" id="btnEnableAudio">Activar Audio</button>
     </div>
   </div>
@@ -372,6 +412,7 @@
           <div class="row-pills">
             <span class="pill" id="currentRoom">—</span>
             <span class="pill2" id="currentExtra">—</span>
+            <span class="pill" id="currentUbi">—</span>
           </div>
         </div>
 
@@ -386,12 +427,12 @@
       </section>
     </main>
 
-    <footer class="footer">
+   <!-- <footer class="footer">
       <div class="ticker">
         <span>🔔 Manténgase atento a su llamado • Si no está presente, su turno puede pasar al siguiente.</span>
       </div>
       <div style="margin-left:14px;color:var(--muted);font-weight:900">v1.2</div>
-    </footer>
+    </footer>-->
   </div>
 <script>
     // ==========================================
@@ -400,13 +441,51 @@
     const VIDEO_VOL_NORMAL = 1.0;   // volumen habitual
     const VIDEO_VOL_DUCK = 0.15;    // volumen mientras narra (0.1–0.3 recomendado)
     const BASE_HOST = "10.1.0.6:8080"; 
-    const WS_URL = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + BASE_HOST + '/ws'; 
-    const API_HISTORY_URL = (location.protocol === 'https:' ? 'https' : 'http') + '://' + BASE_HOST + '/api/turnos/estado'; 
-    const MI_UBICACION = ""; 
+    const WS_URL = (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + BASE_HOST + '/ws';  
+    let MI_UBICACION = localStorage.getItem("MI_UBICACION") || "";
+    const API_HISTORY_BASE =
+    (location.protocol === 'https:' ? 'https' : 'http') + '://' + BASE_HOST + '/api/turnos/estado/';
+
+const selUb = document.getElementById("selUbicacion");
+if (selUb) {
+  selUb.value = MI_UBICACION;
+
+  selUb.addEventListener("change", () => {
+    applyUbicacion(selUb.value);
+  });
+}
 
     // =======================
     // UTILIDADES
     // =======================
+
+function getHistoryUrl() {
+  const ub = (MI_UBICACION ?? "").trim();
+  return ub ? `${API_HISTORY_BASE}${encodeURIComponent(ub)}` : API_HISTORY_BASE;
+}
+
+
+
+    function applyUbicacion(newUb) {
+  MI_UBICACION = (newUb ?? "").trim();
+  localStorage.setItem("MI_UBICACION", MI_UBICACION);
+
+  // limpiar cola para que no se cuelen turnos de otra ubicación
+  state.queue = [];
+
+  // si el current no cumple, lo borramos
+  if (state.current && !matchUbicacion(state.current)) {
+    state.current = null;
+  }
+
+  // filtrar historial existente
+  state.history = (state.history || []).filter(matchUbicacion);
+
+  render();   // refresco inmediato
+
+  // traer verdad de BD (ya filtrada en front)
+  init();
+}
     function toTitleCase(str) {
       if (!str) return "";
       return String(str).toLowerCase().split(' ').map(word => 
@@ -470,11 +549,11 @@ let srcIndex = 0;
 
 const promos = [
   {
-    badge: "Can't Stop",
-    title: "Red Hot Chilli Peppers",
-    sub: "Fundasen ",
+    badge: "CAN'T STOP",
+    title: "RED HOT CHILLI PEAPERS",
+    sub: "CUALQUIER TEXTO DE SUB TITULO",
     srcs: [
-      "./src/media/videos/VIDEO TURNERO - REFLEXIONES.mp4",
+      "./src/media/videos/Red Hot Chili Peppers - Can't Stop [Official Music Video].mp4",
     ]
   },
   {
@@ -537,6 +616,7 @@ playNextVideo();
           document.getElementById('currentPatient').textContent = toTitleCase(state.current.paciente);
           document.getElementById('currentRoom').textContent = toTitleCase(state.current.consultorio);
           document.getElementById('currentExtra').textContent = toTitleCase(state.current.especialidad);
+          document.getElementById('currentUbi').textContent = toTitleCase(state.current.ubicacion);
       }
 
       // B. Render Historial (Lista Lateral)
@@ -558,6 +638,7 @@ playNextVideo();
             <p class="meta">${toTitleCase(p.especialidad)}</p>
           </div>
           <div class="room-tag">${toTitleCase(p.consultorio)}</div>
+          <div class="ubi-tag">${toTitleCase(p.ubicacion)}</div>
         `;
         list.appendChild(item);
       });
@@ -592,7 +673,7 @@ playNextVideo();
         // Hacemos el fetch AHORA para asegurar que el historial esté sincronizado con BD
         try {
             console.log("Fetching historial actualizado..."); 
-            const res = await fetch(API_HISTORY_URL);
+            const res = await fetch(getHistoryUrl());
             if (res.ok) {
                 const data = await res.json();
                 if (Array.isArray(data)) {
@@ -626,52 +707,6 @@ playNextVideo();
         window.speechSynthesis.onvoiceschanged = () => voices = window.speechSynthesis.getVoices();
     }
 
-    // Retorna una Promesa que se resuelve SOLO cuando termina de hablar
-/*    function hablar(turno) {
-        return new Promise((resolve) => {
-            // UI visual de "Llamando"
-            const badge = document.getElementById('callBadge');
-            const card = document.getElementById('currentCard');
-            badge.classList.add('show');
-            card.classList.add('calling');
-            document.getElementById('callText').textContent = "LLAMANDO...";
-            const videoEl = document.getElementById('promoVideo');
-            const prevVol = videoEl.volume;  // guardar volumen actual
-            const cleanup = () => {
-                badge.classList.remove('show');
-                card.classList.remove('calling');
-                resolve();
-                      // restaurar volumen al terminar
-                if (!videoEl.muted) videoEl.volume = prevVol;
-
-                  badge.classList.remove('show');
-                  card.classList.remove('calling');
-                  resolve(); // ¡IMPORTANTE! Esto avisa que terminó
-            };
-
-            // Si no hay audio habilitado, esperamos 4 seg y continuamos
-            if (!audioEnabled || !('speechSynthesis' in window)) {
-                setTimeout(cleanup, 4000);
-                return;
-            }
-
-            // Configurar voz
-            const txt = `Paciente ${toTitleCase(turno.paciente)}, pasar al ${toTitleCase(turno.consultorio)}, ${toTitleCase(turno.especialidad)}`;
-            const u = new SpeechSynthesisUtterance(txt);
-            u.lang = "es-EC";
-            u.rate = 0.9;
-            const v = voices.find(vo => vo.lang.includes('es') && vo.name.includes('Google')) || voices.find(vo => vo.lang.includes('es'));
-            if(v) u.voice = v;
-
-            // Eventos para liberar la promesa
-            u.onend = cleanup;
-            u.onerror = cleanup;
-
-            // Cancelar cualquier cosa previa y hablar
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(u);
-        });
-    }*/
 
     function hablar(turno) {
   return new Promise((resolve) => {
@@ -685,7 +720,7 @@ playNextVideo();
     // VIDEO: ducking con fade
     const videoEl = document.getElementById('promoVideo');
     const prevVol = (videoEl && typeof videoEl.volume === "number") ? videoEl.volume : 1.0;
-    const DUCK_VOL = 0.15;     // volumen mientras narra
+    const DUCK_VOL = 0.05;     // volumen mientras narra
     const FADE_MS = 300;       // duración del fade
     const STEP_MS = 25;        // suavidad
 
@@ -747,6 +782,7 @@ playNextVideo();
     const txt = `Paciente ${toTitleCase(turno.paciente)}, pasar al ${toTitleCase(turno.consultorio)}, ${toTitleCase(turno.especialidad)}`;
     const u = new SpeechSynthesisUtterance(txt);
     u.lang = "es-EC";
+    u.volume = 1;
     u.rate = 0.9;
 
     const v = voices.find(vo => vo.lang.includes('es') && vo.name.includes('Google'))
@@ -765,19 +801,26 @@ playNextVideo();
 
     // Botón activar audio
 document.getElementById('btnEnableAudio').addEventListener('click', async () => {
+    // 1) Tomar ubicación desde el combo
+  const selUb = document.getElementById("selUbicacion");
+  MI_UBICACION = (selUb?.value ?? "").trim();  // "" => general
+  localStorage.setItem("MI_UBICACION", MI_UBICACION);
+  
   audioEnabled = true;
   document.getElementById('audioGate').style.display = 'none';
 
   // ✅ Habilitar audio del video
   const videoEl = document.getElementById('promoVideo');
   videoEl.muted = false;
-  videoEl.volume = 1.0;
+  videoEl.volume = 0.8;
 
   try { 
     await videoEl.play(); // por si el navegador pausó el autoplay
   } catch (e) {
     console.log("No se pudo reproducir el video con audio:", e);
   }
+  applyUbicacion(selUb?.value || "");
+  document.getElementById('statusBadge').textContent = "En línea • " + (MI_UBICACION ? MI_UBICACION : "GENERAL");
 });
 
 
@@ -786,7 +829,7 @@ document.getElementById('btnEnableAudio').addEventListener('click', async () => 
     // =======================
     async function init() {
         try {
-            const res = await fetch(API_HISTORY_URL);
+            const res = await fetch(getHistoryUrl());
             const data = await res.json();
             if (Array.isArray(data) && data.length > 0) {
                 //const norm = data.map(normalizeTurno).filter(Boolean);
@@ -809,7 +852,7 @@ document.getElementById('btnEnableAudio').addEventListener('click', async () => 
         socket = new WebSocket(WS_URL);
         
         socket.onopen = () => {
-            document.getElementById('statusBadge').textContent = "En línea";
+            document.getElementById('statusBadge').textContent = "En línea • " + (MI_UBICACION ? MI_UBICACION : "GENERAL");
             document.getElementById('statusBadge').style.color = "green";
             init(); // Cargar estado inicial
         };
@@ -850,7 +893,8 @@ document.getElementById('btnEnableAudio').addEventListener('click', async () => 
   document.getElementById('callPatient').textContent = toTitleCase(turno.paciente);
   document.getElementById('callRoom').textContent = toTitleCase(turno.consultorio);
   document.getElementById('callSpec').textContent = toTitleCase(turno.especialidad);
-  document.getElementById('callUb').textContent = MI_UBICACION ? `Ubicación: ${MI_UBICACION}` : "Ubicación: GENERAL";
+  document.getElementById('callUbi').textContent = toTitleCase(turno.ubicacion);
+  document.getElementById('callUb').textContent = `Ubicación: ${toTitleCase(turno.ubicacion)}`;
 
   ov.classList.add('show');
 

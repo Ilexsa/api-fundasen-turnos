@@ -24,12 +24,12 @@ func Load() AppConfig {
 		APIToken:       Get("API_TOKEN", ""),
 		AllowedOrigins: Get("ALLOWED_ORIGINS", "*"),
 
-		DBHost:    Get("DB_HOST", Get("SERVER", "localhost")),
-		DBPort:    Get("DB_PORT", Get("PORT", "1433")),
-		DBUser:    Get("DB_USER", Get("DBUSER", "sa")),
-		DBPass:    Get("DB_PASS", Get("DBPASS", "")),
-		DBName:    Get("DB_NAME", Get("DBNAME", "TURNOS")),
-		DBEncrypt: Get("DB_ENCRYPT", Get("SSL", "disable")),
+		DBHost:    Get("DB_HOST", Get("DB_HOST", "localhost")),
+		DBPort:    Get("DB_PORT", Get("DB_PORT", "1433")),
+		DBUser:    Get("DB_USER", Get("DB_USER", "sa")),
+		DBPass:    Get("DB_PASS", Get("DB_PASS", "")),
+		DBName:    Get("DB_NAME", Get("DB_NAME", "TURNOS")),
+		DBEncrypt: Get("DB_ENCRYPT", Get("DB_ENCRYPT", "disable")),
 		DBConnTimeoutSeconds: getInt("DB_CONN_TIMEOUT_SECONDS", 10),
 	}
 }

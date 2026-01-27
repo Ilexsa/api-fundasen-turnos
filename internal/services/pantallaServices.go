@@ -6,7 +6,7 @@ import(
 )
 type PantallaService interface{
 		AgregarTurno(data models.Respuesta) (models.TurnoRequest, error)
-		ObtenerUltimosTurnos(limit int) ([]models.TurnoRequest, error)
+		ObtenerUltimosTurnos(limit int, ubicacion string) ([]models.TurnoRequest, error)
 }
 
 type pantallaService struct{
@@ -17,6 +17,6 @@ func (s *pantallaService) AgregarTurno(data models.Respuesta) (models.TurnoReque
 	return s.repo.AgregarTurno(data)
 }
 
-func (s *pantallaService) ObtenerUltimosTurnos(limit int) ([]models.TurnoRequest, error){
-	return s.repo.ObtenerUltimosTurnos(limit)
+func (s *pantallaService) ObtenerUltimosTurnos(limit int, ubicacion string) ([]models.TurnoRequest, error){
+	return s.repo.ObtenerUltimosTurnos(limit, ubicacion)
 }

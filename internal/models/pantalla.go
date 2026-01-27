@@ -18,4 +18,5 @@ type WebSocketMessage struct {
 type Respuesta struct {
 	ConsultaID  string `json:"consulta_id"`
 	Localidad string `json:"localidad"`
+    ConsultorioID string `json:"consultorio_id"`
 }

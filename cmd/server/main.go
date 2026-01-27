@@ -27,8 +27,8 @@ func main() {
     r := routes.SetupRouter(db.GetDb(), hub)
 
     // 4. Iniciar Servidor
-    log.Println("Servidor corriendo en el puerto :8080")
-    if err := r.Run(":8080"); err != nil {
+    log.Println("Servidor corriendo en el puerto :9090")
+    if err := r.Run(":9090"); err != nil {
         log.Fatalf("Error iniciando servidor: %v", err)
     }
 }

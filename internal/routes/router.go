@@ -39,7 +39,7 @@ func SetupRouter(db *sql.DB, hub *websockets.Hub) *gin.Engine {
     api := r.Group("/api")
     {
         api.POST("/turnos/llamar", pantallaHandler.Receive)
-		api.GET("/turnos/estado", pantallaHandler.GetEstadoActual)
+		api.GET("/turnos/estado/*ubicacion", pantallaHandler.GetEstadoActual)
     }
 
     r.GET("/ws", pantallaHandler.ConnectWS)
