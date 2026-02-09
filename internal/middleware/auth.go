@@ -7,8 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// AuthBearer valida "Authorization: Bearer <token>".
-// Si expectedToken está vacío, no bloquea (útil para desarrollo local).
+
 func AuthBearer(expectedToken string) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		if expectedToken == "" {

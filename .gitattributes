@@ -4,5 +4,6 @@
 *.sum text eol=lf
 *.sh text eol=lf
 *.gitattributes eol=lf
-*.css text eol=lf
+*.css text eol=lf 
 *.js text eol=lf
+*.go text eol=lf

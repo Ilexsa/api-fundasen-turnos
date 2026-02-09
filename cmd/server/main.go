@@ -13,18 +13,22 @@ import (
 func main() {
     config := config.Load();
     err := db.ConnectDB(config.DBHost, config.DBPort,config.DBUser, config.DBPass,
-		config.DBName, config.DBEncrypt) // Asumo que tienes esta func en tu db/dg.go
+		config.DBName, config.DBEncrypt) 
     if err != nil {
         log.Fatalf("No se pudo conectar a la BD: %v", err)
     }
 	log.Println("Conexión a la base de datos establecida")
 
     // 2. Inicializar Hub de WebSockets
+    pacientesHub := websockets.NewHub()
+    
     hub := websockets.NewHub()
     go hub.Run() // ¡IMPORTANTE! Correr en una goroutine aparte
+    go pacientesHub.Run()
 
     // 3. Configurar Router e inyectar dependencias
-    r := routes.SetupRouter(db.GetDb(), hub)
+
+    r := routes.SetupRouter(db.GetDb(), hub, pacientesHub)
 
     // 4. Iniciar Servidor
     log.Println("Servidor corriendo en el puerto :9090")
